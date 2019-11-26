@@ -1,0 +1,23 @@
+From e06982dbe8899d9d00fec89c3fda12004faa77f6 Mon Sep 17 00:00:00 2001
+From: Harunobu Kurokawa <harunobu.kurokawa.dn@renesas.com>
+Date: Fri, 22 Nov 2019 02:32:22 +0900
+Subject: [PATCH] CMakeLists: remove transmitter to build target
+
+Signed-off-by: Harunobu Kurokawa <harunobu.kurokawa.dn@renesas.com>
+---
+ CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 085d3e9..7745f1d 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -1,4 +1,4 @@
+ project (weston-ivi-plugins)
+ 
+-add_subdirectory(waltham-transmitter)
++#add_subdirectory(waltham-transmitter)
+ add_subdirectory(waltham-receiver)
+-- 
+2.7.4
+
