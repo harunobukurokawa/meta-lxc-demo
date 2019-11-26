@@ -1,0 +1,34 @@
+#lxc.net.0.type = empty
+lxc.net.0.type = veth
+lxc.net.0.flags = up
+lxc.net.0.link = lxcbr0
+lxc.net.0.veth.mode = bridge
+lxc.net.0.hwaddr = 7A:6F:3F:FF:23:C0
+#lxc.net.0.ipv4.address = 192.168.20.2/24
+#lxc.net.0.ipv4.gateway = 192.168.20.1
+
+lxc.rootfs.path = dir:/lxc/cluster
+lxc.signal.halt = SIGRTMIN+3
+lxc.signal.reboot = SIGTERM
+lxc.uts.name = "busybox"
+lxc.tty.max = 1
+lxc.pty.max = 1
+
+lxc.mount.auto = cgroup:mixed proc:mixed sys:mixed
+lxc.mount.entry = /sys/kernel/security sys/kernel/security none ro,bind,optional 0 0
+
+lxc.cgroup.devices.allow = c 116:* rwm
+lxc.cgroup.devices.allow = c 13:* rwm
+lxc.cgroup.devices.allow = c 226:* rwm
+lxc.mount.entry = /dev/snd dev/snd none bind,optional,create=dir
+
+lxc.mount.entry = /dev/dri dev/dri none bind,optional,create=dir
+lxc.mount.entry = /dev/tty3 dev/tty3 none bind,optional,create=file
+lxc.mount.entry = /dev/input dev/input none bind,optional,create=dir
+lxc.mount.entry = /run/platform/display mnt/tmp none bind,optional,create=dir
+
+lxc.mount.entry = /run/udev/data run/udev/data none bind,optional,create=dir
+
+lxc.mount.entry = /sys/fs/smackfs sys/fs/smackfs none bind 0 0
+lxc.mount.entry = /etc/smack etc/smack none bind,optional,create=dir
+
