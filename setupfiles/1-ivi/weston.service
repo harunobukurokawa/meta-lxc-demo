@@ -26,7 +26,7 @@ TTYVTDisallocate=yes
 UtmpIdentifier=tty3
 User=display
 EnvironmentFile=-/etc/default/weston
-ExecStart=/usr/bin/weston --idle-time=0  --log=/run/platform/display/weston.log -Bwayland-backend.so  --display=wayland-1 --width=1080 --height=1920
+ExecStart=/usr/bin/weston --idle-time=0  --log=/run/platform/display/weston.log -Bwayland-backend.so  --display=wayland-1 --width=1080 --height=1920  --output-count=2
 
 [Install]
 WantedBy=multi-user.target
